@@ -1,19 +1,26 @@
 #include <iostream>
-using namespace std;
 
-void Mainmenu()
+void MainMenu() {
+
+  std::cout << "Main Menu: \n";
+  std::cout << "1. Check out book \n";
+  std::cout << "2. Check in book \n";
+  std::cout << "3. Add book \n";
+}
+
+void LoginMenu()
 {
-  cout << "Main Menu:\n";
-  cout << "1. Create Account\n";
-  cout << "2. Sign in\n";
-  cout << endl;
+  std::cout << "Menu:\n";
+  std::cout << "1. Create Account\n";
+  std::cout << "2. Sign in\n";
+  std::cout << std::endl;
 }
 
 
 int main()
 {
 
-  cout << R"(
+  std::cout << R"(
 
       __        __   _                              
       \ \      / /__| | ___ ___  _ __ ___   ___  
@@ -23,14 +30,14 @@ int main()
                                                           
   )" << std::endl;
 
-  Mainmenu();
-  
-  string name;
+  LoginMenu();
 
-  cout << "Enter your name: ";
-  getline(cin, name);
+  std::string name;
 
-  cout << "Hello " << name << "!!!" << endl;
+  std::cout << "Enter your name: ";
+  std::getline(std::cin, name);
+
+  std::cout << "Hello " << name << "!!!" << std::endl;
 
 
 

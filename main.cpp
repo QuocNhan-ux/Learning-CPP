@@ -8,13 +8,15 @@ void MainMenu() {
   std::cout << "3. Add book \n";
 }
 
-void LoginMenu()
-{
-  std::cout << "Menu:\n";
-  std::cout << "1. Create Account\n";
-  std::cout << "2. Sign in\n";
-  std::cout << std::endl;
-}
+  void LoginMenu()
+  {
+    std::cout << R"(
+  Menu:
+  1. Create Account
+  2. Sign in
+  3. Quit )" << std:: endl;
+
+  }
 
 
 int main()
@@ -30,7 +32,39 @@ int main()
                                                           
   )" << std::endl;
 
-  LoginMenu();
+  bool run = true;
+
+  while(run) {
+    
+    LoginMenu();
+    int choice;
+
+    std::cout << "Enter your choice: ";
+    std::cin >> choice;
+
+    switch(choice) {
+
+      case 1:
+        break;
+
+      case 2:
+
+        break;
+
+      case 3:
+
+        break;
+
+      default:
+
+        std::cout << "Invalid choice, try again." << std::endl;
+        break;
+
+    }
+
+
+
+  }
 
   std::string name;
 

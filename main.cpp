@@ -52,25 +52,23 @@ int main() {
 	}
 
     if (choice == 1) {
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Create your username: ";
-      std::getline(std::cin, username);
+      std::cin >> username;
+	  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Creatte your password: ";
       std::cin >> password;
-      std::getline(std::cin, password);
-
-    }
-    else if (choice == 2) {
+    } else if (choice == 2) {
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Enter your username: ";
-      std::getline(std::cin, username);
+      std::cin >> username;
+	  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Enter your password: ";
-      std::getline(std::cin, password);
-
-    }
-    else if (choice == 3) {
+      std::cin >> password;
+    } else if (choice == 3) {
+      	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Quiting program. Goodbye!!!\n";
-    }
-
-    else {
+    } else {
       std::cout << "Invalid choice, try again." << std::endl;
     }
 

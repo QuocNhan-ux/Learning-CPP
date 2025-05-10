@@ -2,7 +2,14 @@
 #define BOOKSCOLLECTION_H
 
 
+class Bookscollection {
 
+    public:
+
+
+    private:
+
+};
 
 
 

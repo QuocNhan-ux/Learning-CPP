@@ -1,28 +1,31 @@
-#include <iostream>
+#include "main.h"
+
+using namespace std;
+
 
 void MainMenu() {
 
-  std::cout << "Main Menu: \n";
-  std::cout << "1. Check out book \n";
-  std::cout << "2. Check in book \n";
-  std::cout << "3. Add book \n";
+	std::cout << "Main Menu: \n";
+	std::cout << "1. Check out book\n";
+	std::cout << "2. Check in book\n";
+	std::cout << "3. Add book\n";
+	std::cout << "4. Log out\n";
+	std::cout << std::endl;
 }
 
-  void LoginMenu()
-  {
-    std::cout << R"(
-  Menu:
-  1. Create Account
-  2. Sign in
-  3. Quit )" << std:: endl;
+void LoginMenu() {
+	std::cout << R"(
+Menu:
+1. Create Account
+2. Sign in
+3. Quit )" << std:: endl;
 
-  }
+}
 
 
-int main()
-{
-
-  std::cout << R"(
+int main() {
+	
+	std::cout << R"(
 
       __        __   _                              
       \ \      / /__| | ___ ___  _ __ ___   ___  
@@ -32,50 +35,49 @@ int main()
                                                           
   )" << std::endl;
 
-  bool run = true;
+	int choice = 0;
 
-  while(run) {
-    
+	while(choice != 3) {
+  
     LoginMenu();
-    int choice;
+
+    std::string name;
+    std::string password;
 
     std::cout << "Enter your choice: ";
-    std::cin >> choice;
+    cin >> choice;
 
-    switch(choice) {
+	if (std::cin.fail()) {
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid input! Please enter a number.\n";
+		continue;
+	}
 
-      case 1:
-        break;
+    if (choice == 1) {
+      std::cout << "Create your username: ";
+      std::cin >> name;
+      std::cout << "Creatte your password: ";
+      std::cin >> password;
 
-      case 2:
+    }
+    else if (choice == 2) {
+      std::cout << "Enter your username: ";
+      std::cin >> name;
+      std::cout << "Enter your password: ";
+      std::cin >> password;
 
-        break;
+    }
+    else if (choice == 3) {
+		std::cout << "Quiting program. Goodbye!!!\n";
+    }
 
-      case 3:
-
-        break;
-
-      default:
-
-        std::cout << "Invalid choice, try again." << std::endl;
-        break;
-
+    else {
+      std::cout << "Invalid choice, try again." << std::endl;
     }
 
 
-
   }
-
-  std::string name;
-
-  std::cout << "Enter your name: ";
-  std::getline(std::cin, name);
-
-  std::cout << "Hello " << name << "!!!" << std::endl;
-
-  std::cout << "Test again";
-
-
 
   return 0;
 

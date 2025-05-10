@@ -1,8 +1,5 @@
 #include "main.h"
 
-using namespace std;
-
-
 void MainMenu() {
 
 	std::cout << "Main Menu: \n";
@@ -41,11 +38,11 @@ int main() {
   
     LoginMenu();
 
-    std::string name;
+    std::string username;
     std::string password;
 
     std::cout << "Enter your choice: ";
-    cin >> choice;
+    std::cin >> choice;
 
 	if (std::cin.fail()) {
 		std::cin.clear();
@@ -56,16 +53,17 @@ int main() {
 
     if (choice == 1) {
       std::cout << "Create your username: ";
-      std::cin >> name;
+      std::getline(std::cin, username);
       std::cout << "Creatte your password: ";
       std::cin >> password;
+      std::getline(std::cin, password);
 
     }
     else if (choice == 2) {
       std::cout << "Enter your username: ";
-      std::cin >> name;
+      std::getline(std::cin, username);
       std::cout << "Enter your password: ";
-      std::cin >> password;
+      std::getline(std::cin, password);
 
     }
     else if (choice == 3) {

@@ -3,15 +3,22 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17
 
 # Target executable name
-TARGET = main
+TARGET = open_library
 
 # Source files
-SRC = main.cpp
+SRC = main.cpp books.cpp bookscollection.cpp users.cpp userscollection.cpp
+
+#Object files
+OBJ = $(SRC:.cpp=.o)
 
 # Build target
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
 
+# Compile each .cpp file into .o
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 # Clean build files
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) *.o

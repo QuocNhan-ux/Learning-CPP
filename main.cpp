@@ -38,8 +38,7 @@ int main() {
   
     LoginMenu();
 
-    std::string username;
-    std::string password;
+    std::string username, password, firstname, lastname;
 
     std::cout << "Enter your choice: ";
     std::cin >> choice;
@@ -53,11 +52,21 @@ int main() {
 
     if (choice == 1) {
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	  std::cout << "Enter your first name: ";
+	  std::getline(std::cin, firstname);
+	  std::cout << "Enter your last name: ";
+	  std::cin >> lastname;
+	  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Create your username: ";
       std::cin >> username;
 	  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Creatte your password: ";
       std::cin >> password;
+
+	  std::cout << "Name: " << firstname << " " << lastname << std::endl;
+	  std::cout << "Username: " << username << std::endl;
+	  std::cout << "Password: " << password << std::endl;
+
     } else if (choice == 2) {
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Enter your username: ";

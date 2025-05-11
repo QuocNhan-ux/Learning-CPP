@@ -1,4 +1,5 @@
 #include "main.h"
+#include "users.h"
 
 void MainMenu() {
 
@@ -33,16 +34,11 @@ int main() {
   )" << std::endl;
 
 	int choice = 0;
-
+	std::string username, password, firstname, lastname;
 	while(choice != 3) {
-  
     LoginMenu();
-
-    std::string username, password, firstname, lastname;
-
     std::cout << "Enter your choice: ";
     std::cin >> choice;
-
 	if (std::cin.fail()) {
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
